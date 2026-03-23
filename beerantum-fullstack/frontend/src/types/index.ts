@@ -14,7 +14,7 @@ export interface ApiResponse<T> {
 
 
 
-export type UserRole = "admin" | "editor";
+export type UserRole = "admin" | "editor" | "pending";
 
 export interface User {
   id: string;
