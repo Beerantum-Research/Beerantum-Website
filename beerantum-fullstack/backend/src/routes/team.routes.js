@@ -9,7 +9,7 @@ const memberValidation = [
   body("role").trim().notEmpty().withMessage("Role is required").isLength({ max: 100 }),
   body("education").trim().notEmpty().withMessage("Education is required"),
   body("bio").optional().isLength({ max: 500 }),
-  body("photoUrl").optional().isURL().withMessage("Must be a valid URL"),
+  body("photoUrl").optional({ nullable: true, checkFalsy: true }).isURL().withMessage("Must be a valid URL"),
   body("isLeadership").optional().isBoolean(),
   body("order").optional().isInt({ min: 1 }),
 ];
